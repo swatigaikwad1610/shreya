@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Swati.master.cs" Inherits="shreya.Swati" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title> HiMaT</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="kavita.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        body {
+            background: #f0f0f0;
+        }
+
+        ul {
+            list-style-type: none;
+            font-size: 18px;
+        }
+
+        .ti-ti-folder {
+            color: #2b6ef3;
+            font-weight: 500;
+            font-size: 10px;
+        }
+
+        .ti-ti-file {
+            color: #777676;
+            font-weight: 500;
+            font-size: 10px;
+        }
+
+        .rightAngle::before {
+            content: '\25B6';
+            display: inline-block;
+            font-size: 10px;
+            color: #777676;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nested {
+            padding-left: 55px;
+            display: none;
+        }
+
+        .nested.active {
+            display: block;
+        }
+
+        .rightAngle-Down::before {
+            transform: rotate(90deg);
+            transition: 0.2s ease-out;
+        }
+
+        /* Hover effect */
+        .rightAngle:hover::before,
+        .rightAngle-Down:hover::before {
+            color: #2b6ef3;
+        }
+
+        /* Style for sub-child bullets */
+        .nested ul {
+            list-style-type: disc; /* Change bullet style */
+            padding-left: 30px; /* Adjust indentation */
+        }
+        #abc {
+    background: #F0D01A;
+}
+
+    #abc a {
+        text-decoration: none;
+        color: blue;
+    }
+    #contentWrapper{
+    overflow-y:auto;
+    max-height:500px;
+}
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+		<div class="row">
+				
+			<div class="col-2" id="logo">
+				<a class="navbar-brand" href="#"><img src="Content/logo.png" width="140px" /></a>
+			</div>
+			<div class="col-10" id="header">
+				<h2><b>HinMaT</b> : Hindi Marathi Machine Translation Framework</h2>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-10" id="menu">
+				<ul><b>
+					<li><a href="">Home |</a></li>
+					<li><a href="">About us |</a></li>
+					<li><a href="">Gallery |</a></li>
+					<li><a href="">Products |</a></li>
+					<li><a href="">Contact us |</a></li>
+				</b>
+				</ul>
+			</div>
+            <div class="col-2" id="abc">
+				<b><a href="">Login</a></b>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-2" id="sidebar">
+					<ul>
+					<ul>
+        <li>
+            <span class="rightAngle"></span>
+            <span class="ti-ti-folder"></span>&nbsp;&nbsp;<b>Home</b>
+            <ul class="nested">
+                <li><span class="rightAngle"></span><span class="ti-ti-folder"></span>&nbsp;&nbsp;Master Data
+                    <ul class="nested">
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;Grammer Ontology Master</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;Phrasal lexicon master</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL Root Verb Master</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL Root Verb Master</li>
+                    </ul>
+                </li>
+                <li><span class="rightAngle"></span><span class="ti-ti-folder"></span>&nbsp;&nbsp;Lexicon Manager
+                    <ul class="nested">
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL Word Lexicon Manager</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;TL Word Lexicon Manager</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;Abbreviation Lexicon Manager</li>
+                    </ul>
+                </li>
+                <li><span class="rightAngle"></span><span class="ti-ti-folder"></span>&nbsp;&nbsp;Morphology Rule Manager
+                    <ul class="nested">
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL Word Morphology Manager</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;TL Word Morphology Manager</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL Verb Morphology Rule Manager</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;TL Verb Morphology Rule Manager</li>
+                    </ul>
+                </li>
+                <li><span class="rightAngle"></span><span class="ti-ti-folder"></span>&nbsp;&nbsp;Morphology Generator
+                    <ul class="nested">
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL/TL Word Morphology Generator</li>
+                        <li><span class="ti-ti-file"></span>&nbsp;&nbsp;SL/TL Word Morphology Generator</li>
+                    </ul>
+                </li>
+                <li><span class="rightAngle"></span><span class="ti-ti-folder"></span>&nbsp;&nbsp;Morphology Generator</li>
+            </ul>
+        </li>
+    </ul>
+				</ul>
+			</div>
+			<div class="col-10" id="content">
+        <div id="contentWrapper">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </div>
+        </div>
+			<div class="row" id="footer">
+			<div class="col-12">
+				@copyright 2024 by North Maharashtra University,Jalgaon
+			</div>
+		</div>
+    </form>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    var toggleNode = document.querySelectorAll('.rightAngle');
+    toggleNode.forEach(function(node) {
+        node.addEventListener('click', function() {
+            var nestedList = this.parentElement.querySelector('.nested');
+            nestedList.classList.toggle('active');
+            this.classList.toggle('rightAngle-Down');
+        });
+    });
+    </script>
+</body>
+</html>
